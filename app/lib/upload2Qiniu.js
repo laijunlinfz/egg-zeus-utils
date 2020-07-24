@@ -1,4 +1,5 @@
-'use strict';
+/* eslint-disable */
+"use strict";
 
 /**
  * egg上传文件到七牛
@@ -10,7 +11,7 @@ const qiniu = require("qiniu");
 // const awaitWriteStream = require("await-stream-ready").write;
 const sendToWormhole = require("stream-wormhole");
 
-const md5 = require('./md5');
+const md5 = require("./md5");
 
 // 七牛文件上传(数据流上传)
 const qiniuUploadSteam = async (stream, qiniuConfig) => {
@@ -23,7 +24,7 @@ const qiniuUploadSteam = async (stream, qiniuConfig) => {
     const mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
     const putPolicy = new qiniu.rs.PutPolicy(options);
     const uploadToken = putPolicy.uploadToken(mac);
-    let config = new qiniu.conf.Config();
+    const config = new qiniu.conf.Config();
     config.zone = qiniu.zone.Zone_z0;
 
     const formUploader = new qiniu.form_up.FormUploader(config);
@@ -49,11 +50,10 @@ const qiniuUploadSteam = async (stream, qiniuConfig) => {
     });
     if (imgSrc !== "") {
       return imgSrc;
-    } else {
-      return false;
     }
+    return false;
   } catch (err) {
-    //如果出现错误，关闭管道
+    // 如果出现错误，关闭管道
     await sendToWormhole(stream);
     return false;
   }
@@ -70,7 +70,7 @@ const qiniuUploadBuff = async (buff, qiniuConfig) => {
     const mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
     const putPolicy = new qiniu.rs.PutPolicy(options);
     const uploadToken = putPolicy.uploadToken(mac);
-    let config = new qiniu.conf.Config();
+    const config = new qiniu.conf.Config();
     config.zone = qiniu.zone.Zone_z0;
 
     const formUploader = new qiniu.form_up.FormUploader(config);
@@ -96,11 +96,10 @@ const qiniuUploadBuff = async (buff, qiniuConfig) => {
     });
     if (imgSrc !== "") {
       return imgSrc;
-    } else {
-      return false;
     }
+    return false;
   } catch (err) {
-    //如果出现错误，关闭管道
+    // 如果出现错误，关闭管道
     await sendToWormhole(stream);
     return false;
   }

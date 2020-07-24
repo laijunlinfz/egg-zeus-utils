@@ -11,7 +11,8 @@
     "egg-plugin"
   ],
   "dependencies": {
-    "crypto": "^1.0.1"
+    "crypto": "^1.0.1",
+    "qiniu": "^7.3.2"
   },
   "devDependencies": {
     "autod": "^3.0.1",
@@ -32,8 +33,7 @@
     "cov": "egg-bin cov",
     "lint": "eslint .",
     "ci": "egg-bin pkgfiles --check && npm run lint && npm run cov",
-    "pkgfiles": "egg-bin pkgfiles",
-    "autod": "autod"
+    "pkgfiles": "egg-bin pkgfiles"
   },
   "files": [
     "app",
