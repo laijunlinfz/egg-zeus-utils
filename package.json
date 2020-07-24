@@ -36,22 +36,21 @@
     "autod": "autod"
   },
   "files": [
-    "app.js",
-    "agent.js",
+    "app",
     "config",
-    "app"
+    "app.js"
   ],
   "ci": {
     "version": "8, 10"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eggjs/egg-zeus-utils.git"
+    "url": "git+https://github.com/laijunlinfz/egg-zeus-utils.git"
   },
   "bugs": {
-    "url": "https://github.com/eggjs/egg/issues"
+    "url": "https://github.com/laijunlinfz/egg-zeus-utils/issues"
   },
-  "homepage": "https://github.com/eggjs/egg-zeus-utils#readme",
-  "author": "",
+  "homepage": "https://github.com/laijunlinfz/egg-zeus-utils#readme",
+  "author": "laijl",
   "license": "MIT"
 }
