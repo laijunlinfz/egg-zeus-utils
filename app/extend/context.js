@@ -1,12 +1,12 @@
-'use strict';
+"use strict";
 
-const md5 = require('../lib/md5');
-const upload2Qiniu = require('../lib/upload2Qiniu');
+const md5 = require("../lib/md5");
+const upload2Qiniu = require("../lib/upload2Qiniu");
 const { qiniuUploadSteam, qiniuUploadBuff } = upload2Qiniu;
-const index = require('../lib/utils');
-const check = require('../lib/check');
+const index = require("../lib/utils");
+const check = require("../lib/check");
 
-const utils = {
+const zeusUtils = {
   md5,
   qiniuUploadSteam,
   qiniuUploadBuff,
@@ -14,5 +14,5 @@ const utils = {
   ...check,
 };
 
-module.exports = { utils };
+module.exports = { zeusUtils };
 // module.exports = utils;
