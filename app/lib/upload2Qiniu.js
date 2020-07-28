@@ -53,6 +53,7 @@ const qiniuUploadSteam = async (stream, qiniuConfig) => {
     }
     return false;
   } catch (err) {
+    console.error('qiniuUploadSteam err : ', err);
     // 如果出现错误，关闭管道
     await sendToWormhole(stream);
     return false;
@@ -62,7 +63,7 @@ const qiniuUploadSteam = async (stream, qiniuConfig) => {
 // 七牛文件上传(数据流上传)
 const qiniuUploadBuff = async (buff, qiniuConfig) => {
   try {
-    const filename = md5(stream.filename + Date.now());
+    const filename = md5(Date.now() + '');
     const { accessKey, secretKey, bucket, imageBaseUrl } = qiniuConfig;
     const options = {
       scope: bucket,
@@ -99,8 +100,9 @@ const qiniuUploadBuff = async (buff, qiniuConfig) => {
     }
     return false;
   } catch (err) {
+    console.error('qiniuUploadBuff err : ', err);
     // 如果出现错误，关闭管道
-    await sendToWormhole(stream);
+    // await sendToWormhole(stream);
     return false;
   }
 };
